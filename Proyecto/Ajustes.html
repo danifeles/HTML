@@ -59,6 +59,16 @@
             padding: 20px;
         }
 
+        #icon {
+            color: white;
+            padding: 4px;
+            font-size: 16px;
+            text-shadow: slategray 2px 2px 2px;
+            box-shadow: black 2px 2px 8px;
+            margin-right: 10px;
+            text-align: center;
+        }
+
         #buscar {
             border-top: 0;
             border-left: 0;
@@ -67,6 +77,11 @@
             ;
             border-radius: 0;
             width: 600px;
+        }
+
+        span {
+            font-family: Arial;
+            font-size: 15px;
         }
     </style>
 </head>
@@ -119,7 +134,7 @@
                 <div id="boton">
                     <button type="button" style="color:white; border: 0; padding: 8px; background-color: cadetblue;">
                         GUARDAR </button>
-                        <button type="button" style="color:cadetblue; border: 0; padding: 8px; background-color: white;">
+                    <button type="button" style="color:cadetblue; border: 0; padding: 8px; background-color: white;">
                         DESCARGAR </button>
                 </div>
             </div>
@@ -138,21 +153,101 @@
             </div>
         </div>
         <div style="border-top: 2px solid lightgray; color: lightslategray; margin-top: 20px;">
-            <div class="col-md-3">
-                <ul class="nav flex-column" style="color: white; background-color: rgb(34,37,41);">
-                    <div style="padding-bottom: 10px; padding-top: 10px; border-bottom: 2px solid grey;">
-                    <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-inbox" style="color: white; font-size: medium; margin-right: 5px;"></i>Opciones Generales</a>
-                </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-star" style="color: white; font-size: medium; margin-right: 5px;"></i>Ventas</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-history" style="color: white; font-size: medium; margin-right: 5px;"></i>Facturación / Contabilidad</a>
-                </li>
+            <div class="row">
+                <div class="col-sm-3">
+                    <ul class="nav flex-column" style="height: 800px; color: white; background-color: rgb(34,37,41);">
+                        <div style="padding-bottom: 10px; padding-top: 10px;">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-cog" id="icon"
+                                        style="background-color:rgb(114, 138, 114);"></i>Opciones Generales</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-chart-line" id="icon"
+                                        style="background-color:coral;"></i>Ventas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-file-invoice-dollar" id="icon"
+                                        style="background-color:coral; width: 23px;"></i>Facturación / Contabilidad</a>
+                            </li>
+                        </div>
+                </div>
+
+                <div class="col-sm-9" style="padding-left: 0px; font-weight: bold;">
+                    <div class="row"
+                        style="color: black; background-color: rgb(233, 230, 238); height: 25px; margin-top: 10px;">
+                        <p style="padding-left: 50px; font-weight: bold; font-family: Arial;"> Usuarios </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5" style="margin-left: 50px;margin-top: 50px; border-left: 1px solid grey;">
+                            <i class="fas fa-users"></i> <span> 1 Active User </span> <i class="fas fa-question-circle"
+                                style="color: cadetblue; background-color: white; border-radius: 100%;"></i>
+                            <div>
+                                <button type="button"
+                                    style="color:cadetblue; background-color: white; border: none; padding-top: 18px;"><i
+                                        class="fas fa-arrow-right"></i> Administrar usuarios</button>
+                            </div>
+                        </div>
+                        <div class="col-md-5" style="margin-left: 50px;margin-top: 50px; border-left: 1px solid grey;">
+                            <span> Invitar a nuevos usuarios </span>
+                            <div class="row" style="border-bottom: 1px solid grey; margin-top: 18px;">
+                                <div class="col-sm-9">
+                                    <input type="email" placeholder="Introducir la dirección de correo electrónico"
+                                        style="border: none; width: 500px;">
+                                </div>
+                                <div class="col-sm-3" style="padding-left: 45px;">
+                                    <button type="button"
+                                        style="padding: 5px;color:white; border: 0; background-color: cadetblue;">
+                                        INVITAR </button>
+                                </div>
+                            </div>
+                            <div style="margin-top: 18px;">
+                                <span> Remember that each user will increase your monthly free. Check out pricing on <a
+                                        style="color: cadetblue; font-weight: bold;"> www.odoo.com/pricing</a>.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row"
+                        style="color: black; background-color: rgb(233, 230, 238); height: 25px; margin-top: 30px;">
+                        <p style="padding-left: 50px; font-weight: bold; font-family: Arial;"> Compañías </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5" style="margin-left: 50px;margin-top: 50px; border-left: 1px solid grey;">
+                            <span> Apasoft </span>
+                            <div style="color:rgb(199, 189, 189); font-size: 14px; font-weight: normal;">España</div>
+
+                            <div>
+                                <button type="button"
+                                    style="color:cadetblue; background-color: white; border: none; padding-top: 18px;"><i
+                                        class="fas fa-arrow-right"></i> Actualizar información </button>
+                            </div>
+                        </div>
+                        <div class="col-md-5" style="margin-left: 50px;margin-top: 50px; border-left: 1px solid grey;">
+                            <span> 1 Company </span>
+                            <div>
+                                <button type="button"
+                                    style="color:cadetblue; background-color: white; border: none; padding-top: 18px;"><i
+                                        class="fas fa-arrow-right"></i> Administrar empresas </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row"
+                        style="color: black; background-color: rgb(233, 230, 238); height: 25px; margin-top: 30px;">
+                        <p style="padding-left: 50px; font-weight: bold; font-family: Arial;"> Idiomas </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5" style="margin-left: 50px;margin-top: 50px; border-left: 1px solid grey;">
+                            <span> 1 Language </span>
+                            <div>
+                                <button type="button"
+                                    style="color:cadetblue; background-color: white; border: none; padding-top: 18px;"><i
+                                        class="fas fa-arrow-right"></i> Añadir idioma </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
