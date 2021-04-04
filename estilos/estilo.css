@@ -1,0 +1,35 @@
+html{
+    background-color: grey;
+}
+
+body{
+    color:lightblue;
+}
+
+p{
+    color: red;
+    text-align: center;
+}
+
+header{
+    color: green;
+    text-align: right;
+}
+
+article{
+    color: red;
+    text-align:center;
+}
+
+#cabecera{
+    font-size: 200%;
+}
+
+.prueba{
+    font-size:100%;
+    margin: 25%;
+}
+
+p.grande{
+    font-size:300%;
+}

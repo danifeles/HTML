@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function posicion()
+        {
+        var texto = prompt("Introduzca una cadena de texto")
+        var caracter = prompt("Introduzca un carácter de dicha cadena")
+        var longitud = texto.length;
+        var mensaje;
+        for(let i=0; i<longitud; i++)
+        {           
+            if(texto.indexOf(caracter)!= -1)
+            {
+                mensaje = " El carácter introducido está en la posición "+(1+(texto.indexOf(caracter)));
+
+            } else
+            {
+                mensaje = "El carácter introducido no existe en la cadena de texto";
+            }
+            
+        }
+        document.getElementById("mensaje1").innerHTML=mensaje
+        }
+    </script>
+</head>
+<body>
+    <button onclick="posicion()"> Posición </button>
+    <p id="mensaje1"> Mensaje </p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array de CADENAS</title>
+   </head>
+   <body>
+    <div id="div1">
+    </div>
+
+   <input type="button" value="Añadir párrafo" onclick="poner_parrafo();"/>
+   <input type="button" value="Borrar párrafo" onclick="quitar_parrafo();"/>
+   <script>
+    function poner_parrafo()
+    {
+        var long = document.getElementsByTagName("p").length
+        var parrafo=document.createElement("p")
+        var texto=document.createTextNode("Parrafo número "+(1+long))
+        parrafo.appendChild(texto);
+        var x=document.getElementById("div1")
+        x.appendChild(parrafo)
+    }
+    function quitar_parrafo()
+    { 
+        var long = document.getElementsByTagName("p").length
+        if(long!=0)
+        {
+        var parrafo=document.getElementById("div1")
+        parrafo.removeChild(parrafo.childNodes[0]);
+        } else 
+        {
+        alert("Ya no quedan párrafos para eliminar")
+        }
+    }
+</script>
+   </body>
+   </html>

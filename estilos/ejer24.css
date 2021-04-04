@@ -1,0 +1,24 @@
+p{
+    border-style: solid;
+    border-width: 5px;
+    border-color: lightslategray;
+    border-right-color: lime;
+    border-radius: 10px;
+    border-right-style: dotted;
+    border-top-left-radius: 0px;
+}
+
+#sombras{
+    border-style: solid;
+    border-radius: 0px 0px 0px 0px;
+    box-shadow: 5px 10px 2px 10px red, -5px -5px 10px blue;
+}
+
+#ejemplo{
+    padding: 30px;
+    text-align: center;
+    border-style: none;
+    background-color: lightgray;
+    box-shadow: -5px -5px 2px grey;
+    border-radius: 0px 0px 0px 0px;
+}

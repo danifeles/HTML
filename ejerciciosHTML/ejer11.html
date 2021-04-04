@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+                <!--
+                En tr.elemento1 es para la clase tr creada más abajo
+                Para poner id ponemos almohadilla
+                El hower es para cambiar color cuando pasamos el ratón por encima seleccionando -->
+    <style>
+        tr.elemento1{
+            background-color: deeppink;
+        }
+        #t01{
+            background-color: darkmagenta;
+        }
+        #t01.hower{
+            background-color: darkorchid;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+        <caption> TITULO DE TABLA </caption>
+        <tr style="background-color: darkgrey;">
+            <th>
+            <!-- El th se pone para que sepamos lo que es la cabecera -->
+                Item/Desc.
+            </th>
+            <th>
+                Qty.
+            </th>
+            <th>
+                @
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+        <tr>
+            <td>
+                Paperclips(Box)
+            </td>
+            <td>
+                100
+            </td>
+            <td>
+                1.15
+            </td>
+            <td>
+                115.00
+            </td>
+        </tr>
+        <tr class="elemento1">
+            <td>
+                Paper (Case)
+            </td>
+            <td>
+                10
+            </td>
+            <td>
+                45.99
+            </td>
+            <td>
+                459.90
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Wastepaper<br/> <!-- Para que aparezca en la próxima linea -->
+                Baskets
+            </td>
+            <td>
+                2
+            </td>
+            <td>
+                17.99
+            </td>
+            <td>
+                35.98
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="background-color: darkgrey;">
+                <b>Subtotal</b>
+            </td>
+            <td>
+                610.88
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="background-color: darkgrey;">
+                <b>Tax</b>
+            </td>
+            <td>
+                7%
+            </td>
+            <td>
+                42.76
+            </td>
+        </tr>
+        <tr id="t01">
+            <td colspan="3" style="background-color: darkgrey;">
+                <b>Total</b>
+            </td>
+            <td>
+                653.64
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

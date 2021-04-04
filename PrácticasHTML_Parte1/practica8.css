@@ -1,0 +1,12 @@
+html{
+    background-color: gray;
+}
+fieldset{
+    border-color: rgb(73, 73, 223);
+}
+h1{
+    color:mediumvioletred;
+}
+label{
+    color:mediumblue;
+}
