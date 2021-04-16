@@ -6,9 +6,9 @@ function crear_boton(){
 }
 
 function crear_texto(){
-    var parrafo=document.createElement("p")
+    var h1=document.createElement("h1")
     var texto=document.createTextNode("Texto gordo")
-    parrafo.appendChild(texto);
+    h1.appendChild(texto);
     var x=document.getElementById("div1")
-    x.appendChild(parrafo)
+    x.appendChild(h1)
 }

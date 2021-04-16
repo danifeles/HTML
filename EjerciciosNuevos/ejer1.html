@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.css">
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.js"></script>
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5 border">
+            <h1>FORMULARIO</h1>
+            <form>
+                <div class="form-group">
+                    <label> Cadena </label>
+                    <input type="text" class="form-control" id="texto" placeholder="texto">
+                    <input type="button" value="Cadena" onclick="Cadena();"/>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-5 border" id="parrafo2">
+          
+        </div>
+    </div>
+</div>
+<script>
+    function Cadena(){
+    var texto=document.getElementById("texto").value;
+    var fragmentos = texto.split(" ")
+    var long = fragmentos.length;
+    var x=0;
+
+    while(x<long){
+        var parrafo=document.createElement("p")
+        var texto_partido = document.createTextNode(texto_en_partes[x])
+        parrafo.appendChild(texto_partido)
+        var alerta=document.getElementById("parrafo2")
+        alerta.appendChild(parrafo)
+        x++;
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"> DATOS </p>
+    <script>
+
+        //Definimos el Objeto con propiedades y métodos
+        var alumno = {
+            nombre: "",
+            apellidos: "",
+            edad: 0,
+            ver: function() {
+                return nombre
+            }
+        }
+
+        //Constructor que se llama como el objeto
+        function Alumno(n, a) {
+            this.nombre = n
+            this.apellidos = a
+        }
+
+        var alu1 = new Alumno("pedro", "rodriguez")
+        var alu2 = new Alumno("Rosa", "García")
+        document.getElementById("p1").innerHTML = alu1.nombre+" "+alu2.nombre
+
+    </script>
+</body>
+</html>

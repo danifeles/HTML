@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src = "js/jquery-3.6.0.min.js"></script>
+    <script src = "https://unpkg.com/@popperjs/core@2"></script>
+    <script src = "js/bootstrap.min.js"></script>       
+   
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Mi primer ejemplo con CARDS de Bootstrap</h1>
+        <div class="row">
+            <div class="col-sm-4" style="height: 200px;">
+            <form>                
+                <select id="browsers" class="form-select" onchange="navegador()">
+                    <option value="Chrome">Chrome</option>
+                    <option value="Internet Explorer">Internet Explorer</option>
+                    <option value="Firefox">Firefox</option>
+                </select>
+                <br>
+                <br>
+               <button type="button" class="btn btn-primary" id="edge">Añadir EDGE</button>
+
+            </form>
+            </div>
+            <div class="col-sm-8" id="columna2">
+                <div class="card" style="width: 18rem;"> 
+                    <div class="card-body">
+                      <h5 class="card-title">NAVEGADOR SELECCIONADO</h5>
+                      <p id="p1" class="card-text">NAVEGADOR</p>
+                      
+                    </div>
+                  </div>
+
+            </div>
+        </div>
+    
+    <script>
+      // Añadir EDGE mediante el boton
+      var boton=document.getElementById("edge")
+      boton.addEventListener('click',edge)
+
+      function edge()
+      {
+        //Me creo un objeto de tipo Option  
+        var opcion=document.createElement("option")
+        //Le pòngo el valor
+        opcion.value="Edge"
+        //Le pongo la etiqueta a visualizar
+        opcion.innerHTML="Navegador EDGE"
+
+        //Añadir a la SELECT (lista)
+        var lista=document.getElementById("browsers")
+        lista.appendChild(opcion)
+           
+      }
+
+
+
+
+
+      //Poner el navegado rn Mayuscula en el CARD
+     function navegador()
+     {
+         //Seleccionar la lista de navegadores
+         console.log('He entrado')
+         var navegadores=document.getElementById("browsers")
+         //Averiguar cual hemos seleccionado
+         var seleccionado=navegadores.selectedIndex
+         //Pintarlo en el parrafo
+        //document.getElementById("p1").innerHTML=navegadores.options[seleccionado].text
+  
+        document.getElementById("p1").innerHTML=document.getElementById("browsers").options[document.getElementById("browsers").selectedIndex].text.toUpperCase()
+
+     }
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Ejercicio </title>
+    <style type="text/css">
+        body {
+            background: #045FB4;
+            /* el color de fondo de nuestra pgina */
+        }
+
+        div#contenedor2 {
+            background: red;
+            /* color de fondo del contenedor receptor */
+            border: dotted 2px #FF8000;
+            /* borde de 8 píxeles de tipo punteado */
+            width: 500px;
+            /* anchura de 200 píxeles */
+            height: 500px;
+            /* altura de 200 píxeles */
+            position: absolute;
+            /* posición absoluta para indicar margenes en base a la ventana */
+            top: 0px;
+            left: 650px;
+            /* margen de la derecha */
+            color: #045FB4;
+            /* color de la letra */
+            text-align: center;
+            /* alineación del texto */
+        }
+
+        div#contenedor1 {
+            background: green;
+            /* color de fondo del contenedor receptor */
+            border: dotted 2px #FF8000;
+            /* borde de 8 píxeles de tipo punteado */
+            width: 500px;
+            /* anchura de 200 píxeles */
+            height: 500px;
+            /* altura de 200 píxeles */
+            position: absolute;
+            /* posición absoluta para indicar margenes en base a la ventana */
+            /* margen inferior*/
+            left: 0px;
+            /* margen de la derecha */
+            color: #045FB4;
+            /* color de la letra */
+            text-align: center;
+            /* alineación del texto */
+        }
+
+        div#contenedorm {
+            background: white;
+            /* color de fondo del contenedor receptor */
+            border: dotted 2px #FF8000;
+            /* borde de 8 píxeles de tipo punteado */
+            width: 100px;
+            /* anchura de 200 píxeles */
+            height: 100px;
+            /* altura de 200 píxeles */
+            /* margen inferior*/
+            left: 510px;
+            position: relative;
+            /* posición absoluta para indicar margenes en base a la ventana */
+            color: #045FB4;
+            /* color de la letra */
+            text-align: center;
+            /* alineación del texto */
+        }
+    </style>
+    <script>
+        function derecha(){
+            var imagen = document.getElementById("img")
+            var cont1 = document.getElementById("contenedor1")
+            var cont2 = document.getElementById("contenedor2")
+            cont2.appendChild(imagen)
+            cont1.removeChild(imagen)
+        }
+        function izquierda(){
+            var imagen = document.getElementById("img")
+            var cont1 = document.getElementById("contenedor1")
+            var cont2 = document.getElementById("contenedor2")
+            cont1.appendChild(imagen)
+            cont2.removeChild(imagen)
+        }
+    </script>
+</head>
+
+<body>
+    <div id="contenedor1">
+        <img id="img" src="https://cdn2.iconfinder.com/data/icons/system-flat-buttons/512/android-512.png" />
+    </div>
+    <div id="contenedorm">
+        <input type="button" value=">>" id="boton" onclick="derecha();" />
+        <br>
+        <input type="button" value="<<" id="boton" onclick="izquierda();" />
+    </div>
+    <div id="contenedor2">
+    </div>
+</body>
+
+</html>

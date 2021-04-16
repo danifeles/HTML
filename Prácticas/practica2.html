@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p> hola </p>
+    <a name="ejer1">Ejercicio1</a><br>
+    <a name="ejer2">Ejercicio2</a><br>
+    <a name="ejer3">Ejercicio3</a><br>
+    <p> adios </p>
+    <button id="boton1"> Número de a's </button>
+    <button id="boton2"> Al reves </button>
+    <label id="pintar"> Pintar </label>
+    <script>
+        //El numero de <a> que hay en el documento
+        //Que pinte el contenido del segundo <a>
+            document.getElementById("boton1").addEventListener('click',numerodea)
+            document.getElementById("boton2").addEventListener('click',alreves)
+
+            function numerodea() {
+                var num = document.getElementsByTagName("a")
+                document.getElementById("pintar").innerHTML = "Número de párrafos a's: "+num.length+" Contenido del segundo <a>: "+num[1].innerHTML
+            }
+
+            function alreves() {
+                var num = document.getElementsByTagName("a")
+                for(let i=num.length-1; i>=0; i--)
+                {
+                    document.getElementById("pintar").innerHTML = document.getElementById("pintar").innerHTML +"<br>"+num[i].innerHTML;
+                }
+            }
+
+    </script>
+</body>
+
+</html>

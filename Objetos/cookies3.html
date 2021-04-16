@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.css">
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.js"></script>
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Propiedades</h1>
+        <p class="lead">Objetos</p>
+        <hr class="my-4">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="nombre" id="valor_nombre">
+            <input type="text" class="form-control" placeholder="apellidos" id="valor_apellidos">
+            <input type="text" class="form-control" placeholder="edad" id="valor_edad">
+            <input type="text" class="form-control" placeholder="hobby" id="valor_hobby">
+            <button class="btn btn-outline-secondary" type="button" onclick="añadir()"> Add </button>
+        </div>
+    </div>
+    <script>
+
+        function añadir() {
+            var nombre1 = document.getElementById("valor_nombre").value
+            var apellidos1 = document.getElementById("valor_apellidos").value
+            var edad1 = document.getElementById("valor_edad").value
+            var hobby1 = document.getElementById("valor_hobby").value
+
+            var info={
+                nombre: nombre1,
+                apellidos: apellidos1,
+                edad: edad1,
+                hobby: hobby1
+            }
+            for (i in info) {
+                document.cookie = i + "=" + info[i];
+            }
+        }
+    </script>
+</body>
+
+</html>

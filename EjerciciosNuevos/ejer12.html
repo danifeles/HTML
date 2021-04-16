@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.css">
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.js"></script>
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" id="contenedorcompleto">
+            <div class="col-6">
+                <h1>Formulario</h1>
+
+                <div class="input-group mb-3">
+                    <input type="text" id="entrada" class="form-control" placeholder="Introduzca cadena de texto"
+                        aria-label="Cadena" aria-describedby="basic-addon1">
+                </div>
+                <button type="button" id="boton1" class="btn btn-success" onclick="enviar();">Enviar</button>
+                <button type="button" id="boton2" class="btn btn-success" onclick="borrar1();">Borrar</button>
+            </div>
+            <div class="col-6" id="listax">
+                <ul class="list-group" id="lista">
+
+
+                </ul>
+
+
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var array1 = []
+        function enviar() {
+            //Eliminar la lista original
+            var l = document.getElementById("lista")
+            l.remove()
+            //Buscamos el texto introducico y lo aañadimos al array
+            var cadena = document.getElementById("entrada").value;
+            array1.push(cadena)
+            /* Creamos la Unordered List*/
+            var lista = document.createElement("ul")
+            lista.className = "list-group"
+            lista.id = "lista"
+            listax.appendChild(lista)
+            //Añadimos el array a la lista
+            for (i = 0; i < array1.length; i++) {
+                var node = document.createElement('li');
+                node.className = "list-group-item"
+                var posicion = document.createTextNode(array1[i])
+                node.appendChild(posicion)
+                var lista = document.getElementById("lista")
+                lista.appendChild(node);
+
+            }
+        }
+
+        function borrar1() {
+            //Eliminar la lista original
+            var l = document.getElementById("lista")
+            l.remove()
+            //Borramos la último posicion del array
+            var cadena = document.getElementById("entrada").value;
+            array1.pop(cadena)
+            /* Creamos la Unordered List*/
+            var lista = document.createElement("ul")
+            lista.className = "list-group"
+            lista.id = "lista"
+            listax.appendChild(lista)
+            //Añadimos el array a la lista
+            for (i = 0; i < array1.length; i++) {
+                var node = document.createElement('li');
+                node.className = "list-group-item"
+                var posicion = document.createTextNode(array1[i])
+                node.appendChild(posicion)
+                var lista = document.getElementById("lista")
+                lista.appendChild(node);
+
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

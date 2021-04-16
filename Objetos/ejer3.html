@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.css">
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.js"></script>
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Propiedades</h1>
+        <p class="lead">Objetos</p>
+        <hr class="my-4">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Propiedad" id="propiedad">
+            <input type="text" class="form-control" placeholder="Valor" id="valor">
+            <button class="btn btn-outline-secondary" type="button" id="añadir"> Add </button>
+            <button class="btn btn-outline-secondary" type="button" id="borrar"> Delete </button>
+            <button class="btn btn-outline-secondary" type="button" id="pintar"> Pintar </button>
+        </div>
+        <p id="p1"> Resultado </p>       
+    </div>
+    <script>
+        var coche = {
+            matricula: "XXXXX",
+            cv: 90,
+            ruedas: 4,
+            pvp: 10000
+        }
+
+        document.getElementById("añadir").addEventListener('click', añadir)
+        document.getElementById("borrar").addEventListener('click', borrar)
+        document.getElementById("pintar").addEventListener('click', pintar)
+
+        function añadir() {
+        var prop = document.getElementById("propiedad").value
+        var valor = document.getElementById("valor").value
+        coche[prop] = valor;
+        }
+        
+        function borrar() {
+        var prop = document.getElementById("propiedad").value
+        delete coche[prop]
+        }
+
+        function pintar() {
+            document.getElementById("p1").innerHTML = "";
+
+            for (i in coche) {
+                document.getElementById("p1").innerHTML = document.getElementById("p1").innerHTML + "<br>" +i+ " "+ coche[i]
+            }
+        }  
+    </script>
+</body>
+</html>

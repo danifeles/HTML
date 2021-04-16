@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> Ejemplo de Event Listener </h3>
+    <button id="boton1"> Pulsame </button>
+    <p id="p1"> Ejemplo de Listener </p>
+    <p id="p2" style="background-color: red; color: white;"> Parrafo nuevo</p>
+    <input id="cajadetexto" type="text">
+    <label id="texto"></label>
+
+<script>
+    document.getElementById("boton1").addEventListener("click", hola)
+
+    function hola(){
+        document.getElementById('p1').innerHTML='hola';
+    }
+
+    document.getElementById("p2").addEventListener("dblclick", cambiar_color)
+    document.getElementById("p2").addEventListener("mouseover", cambiar_color1)
+    document.getElementById("p2").addEventListener("mouseout", cambiar_color2)
+
+    function cambiar_color(){
+        document.getElementById('p2').style.backgroundColor="blue";
+    }
+    function cambiar_color1(){
+        document.getElementById('p2').style.backgroundColor="black";
+    }
+    function cambiar_color2(){
+        document.getElementById('p2').style.backgroundColor="yellow";
+    }
+
+    document.getElementById("cajadetexto").addEventListener("keyup",copiar)
+
+    function copiar() {
+        var text = document.getElementById("cajadetexto").value
+        var mayus = text.toUpperCase();
+        var invertir = mayus.split('').reverse().join('');
+        document.getElementById("texto").innerHTML=invertir
+    }
+</script>
+</body>
+</html>

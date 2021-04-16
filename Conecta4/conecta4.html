@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <script src="/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <title>Document</title>
+    <style>
+        #board {
+          margin: 1rem;
+          background-color: #4b7dba;
+          border: 3px solid black;
+        }  
+  
+        .board_cell {
+          height: 4rem;
+          border-radius: 100%;
+          border: 2px solid black;
+          background-color: white;
+          margin: 0.75rem;
+          text-align: center;
+        }
+      </style>
+    </head>
+  
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="./logo_test.png" width="30" height="30" class="d-inline-block align-top" alt="" />
+          Conecta Cuatro
+        </a>
+  
+      </nav>
+  
+      <div class="container">
+        <div class="row pt-2 pl-4">
+          <div class="col-1 badge badge-warning" id="Turn">Turno</div>
+          <div class="col-1 offset-1 badge badge-success" id="PlayerName1">Jugador 1</div>
+          <div class="col-1 offset-1 badge badge-secondary" id="PlayerName2">Jugador 2</div>
+        </div>
+  
+        <div class="row">
+          <div class="col-8" id="board">
+            <div class="row board_row pl-4 pt-2" id="board_row">
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+            </div>
+            <div class="row board_row pl-4" id="board_row">
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+            </div>
+            <div class="row board_row pl-4" id="board_row">
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+            </div>
+            <div class="row board_row pl-4" id="board_row">
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+            </div>
+            <div class="row board_row pl-4" id="board_row">
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+            </div>
+            <div class="row board_row pl-4" id="board_row">
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+            </div>
+            <div class="row board_row pl-4" id="board_row">
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+            </div>
+            <div class="row board_row pl-4" id="board_row">
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+              <div class="col board_cell"></div>
+            </div>
+          </div>
+          <div class="col-4" id="LateralBanner">
+            <img
+              src="https://media.cntraveler.com/photos/581250f2997d59497dccf8bc/16:9/w_2560%2Cc_limit/GettyImages-185298837.jpg"
+              style="visibility: hidden"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <script>
+        // Array de columnas dentro de cada fila (id) con query selector?
+        var cells = document.querySelectorAll(".board_cell");
+        
+        for(var i = 0; i<cells.length; i++) {
+          var cell = cells[i];
+  
+          cell.addEventListener('click', test);
+        }
+  
+        function test(event) {
+            //this;
+            var casilla = event.currentTarget;
+            casilla.style.backgroundColor = "red";
+        }
+      </script>
+    </body>
+  </html>

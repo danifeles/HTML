@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.css">
+  <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.js"></script>
+  <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <form>
+          NAVEGADOR:
+          <select class="form-select" id="browsers" onchange="navegador()">
+            <option value="Chrome">Chrome</option>
+            <option value="Internet Explorer">Internet Explorer</option>
+            <option value="Firefox">Firefox</option>
+          </select>
+          <button type = button class="btn btn-primary" id="boton"> AÑADIR EDGE </button>
+        </form>
+      </div>
+
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 id="p1" class="card-title">Navegador elegido</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    function navegador() {
+      document.getElementById("p1").innerHTML = document.getElementById("browsers").options[document.getElementById("browsers").selectedIndex].text.toUpperCase();
+    }
+
+    var boton1 = document.getElementById("boton")
+    boton1.addEventListener('click', agregar_nav())
+
+    function agregar_nav() {
+      var opcion = lista.createElement("option")
+      opcion.value = "EDGE"
+      opcion.innerHTML = "Navegador EDGE"
+
+      var lista = document.getElementById("browsers")
+      lista.appendChild(opcion)
+
+    }
+  </script>
+</body>
+
+</html>

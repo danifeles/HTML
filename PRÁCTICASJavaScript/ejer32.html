@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="lienzo" onmousemove="posicion(event)" width="400px" height="300px" style="border: 1px solid;"></canvas>
+    <br>
+    <p id="coordenadas"> Coordenadas </p>
+
+    <script>
+            var lienzo = document.getElementById("lienzo");
+            var ctx = lienzo.getContext("2d");
+
+            //Asignamos el contexto
+            var ctx = lienzo.getContext("2d")
+
+            //Dibujamos el marco
+
+            ctx.beginPath();
+
+            ctx.rect(75, 75, 150, 150);
+            ctx.rect(50, 50, 200, 200);
+
+            ctx.closePath();
+            ctx.stroke();
+
+            //Dibujamos triángulo relleno
+
+            ctx.beginPath();
+            ctx.moveTo(100, 100);
+            ctx.lineTo(175, 100);
+            ctx.lineTo(100, 175);
+            ctx.fill();
+            ctx.closePath();
+
+            //Dibujamos triángulo hueco
+
+            ctx.beginPath();
+            ctx.moveTo(200, 200);
+            ctx.lineTo(200, 120);
+            ctx.lineTo(120, 200);
+            ctx.closePath();
+            ctx.stroke();
+
+            function posicion(x)
+            {
+                var posx = x.clientX
+                var posy = y.clientY
+                document.getElementById("coordenadas").innerHTML=posx+","+posy;
+            }
+
+    </script>
+</body>
+
+</html>

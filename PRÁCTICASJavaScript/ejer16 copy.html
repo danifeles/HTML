@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p> MAPAS </p>
+    <label>Latitude</label>
+    <input id="latitude" type="text"/>
+    <label>Longitud</label>
+    <input id="longitude" type="text"/>
+    <div id="Mapa">  </div>
+    <button onclick="mostrar()"> ACEPTAR </button>
+
+    <script>
+
+function localizar()
+        {
+            if(navigator.geolocation)
+            {
+                navigator.geolocation.getCurrentPosition(mostrar)
+            } else 
+            {
+                document.getElementById("coordenadas").innerHTML="No hay soporte de GEO"
+            }
+        }
+
+        //Funcion para visualizar las coordenadas
+        function mostrar()
+        {
+            var lat = document.getElementById("latitude").value
+            var long = document.getElementById("longitude").value
+            const posicion = { lat: lat  , lng: long }
+)
+            var m=document.getElementById("Mapa")
+            m.style.width='250px'
+            m.style.width='500px'
+            var opciones = {center: posicion}
+            var mapa_google = new google.maps.Map(m, opciones)
+            var marcador= new google.maps.Marker({position:posicion,map:mapa_google,Title:"ESTOY AQUI"})
+        }
+        mostrar()
+    </script>
+</body>
+</html>

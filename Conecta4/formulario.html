@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+    <link rel="stylesheet" href="/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <script src="/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://kit.fontawesome.com/e22ea825df.js" crossorigin="anonymous"></script>
+    <style>
+    </style>
+</head>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <h1 class="display-3">Conecta 4</h1>
+
+                <form>
+                    <fieldset>
+                        <legend>Datos de usuarios</legend>
+                        <div class="form-group row">
+                            <label class="col-3 col-form-label">Nombre</label>
+                            <div class="col-9">
+                                <input class="form-control" type="text">
+
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-3 col-form-label">Email</label>
+                            <div class="col-9">
+                                <input class="form-control" type="email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" id="acepta_condiciones_check" type="checkbox">
+                                <label class="form-check-label" for="acepta_condiciones_check">Aceptas las condiciones y
+                                    política de privacidad</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Datos de la partida</legend>
+                        <div class="form-group">
+                            <label>Jugadores</label>
+                            <!-- <input class="form-control" type="number" value="2"> -->
+                            <select class="form-control" id="num_jugadores">
+                                <option value="2" selected>2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-3 col-form-label">Jugador 1</label>
+                            <div class="col-9">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <select class="form-control">
+                                            <option value="H">User</option>
+                                            <option value="M">Robot</option>
+                                        </select>
+                                    </div>
+                                    <input class="form-control" type="text" placeholder="Nombre">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-3 col-form-label">Jugador 2</label>
+                            <div class="col-9">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <select class="form-control">
+                                            <option value="H">User</option>
+                                            <option value="M">Robot</option>
+                                        </select>
+                                    </div>
+                                    <input class="form-control" type="text" placeholder="Nombre">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-3 col-form-label">Jugador 3</label>
+                            <div class="col-9">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <select class="form-control">
+                                            <option value="H">User</option>
+                                            <option value="M">Robot</option>
+                                        </select>
+                                    </div>
+                                    <input class="form-control" type="text" placeholder="Nombre">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="jugador-4" class="form-group row" style="display:none">
+                            <label class="col-3 col-form-label">Jugador 4</label>
+                            <div class="col-9">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <select class="form-control">
+                                            <option value="H">User</option>
+                                            <option value="M">Robot</option>
+                                        </select>
+                                    </div>
+                                    <input class="form-control" type="text" placeholder="Nombre">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-outline-primary">Invitar a un amigo</button>
+                        <button class="btn btn-primary">Comenzar la partida</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-5">
+                <img src="img/conecta4-intro.png">
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+
+        showPlayers();
+        // No me gusta para este formulario
+        //document.createElement();
+
+        function showPlayers() {
+            var numPlayers = +document.getElementById("num_jugadores").value;
+
+        }
+    </script>
+</body>
+
+</html>

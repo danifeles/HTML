@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.css">
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.js"></script>
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Propiedades</h1>
+        <p class="lead">Objetos</p>
+        <hr class="my-4">
+        <p id="p1">aqui tengo un parrafo</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" id="boton" role="button">Aceptar</a>
+        </p>
+      </div>
+    <script>
+        var coche = {
+            matricula:"XXXXX",
+            cv:90,
+            ruedas:4,
+            pvp:10000
+        }
+
+        document.getElementById("boton").addEventListener('click', prop)
+
+        function prop() {
+        document.getElementById("p1").innerHTML =  "Matricula: "+coche.matricula+" CV: "+coche.cv+" Ruedas: "+coche.ruedas +" PVP: "+coche.pvp;
+        }
+    </script>
+</body>
+
+</html>

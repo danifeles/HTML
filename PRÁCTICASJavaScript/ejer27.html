@@ -1,0 +1,88 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Probando Drag and Drop con HTML5</title>
+
+<style type="text/css">
+body{
+background: #045FB4; /* el color de fondo de nuestra página */
+}
+ 
+div#contenedor{
+background: red; /* color de fondo del contenedor receptor */
+border: dotted 2px #FF8000; /* borde de 8 pÃ­xeles de tipo punteado */
+width:200px; /* anchura de 200 pÃ­xeles */
+height: 200px; /* altura de 200 pÃ­xeles */
+position:absolute; /* posiciÃ³n absoluta para indicar margenes en base a la ventana */
+bottom:0px; /* margen inferior*/
+right:0px; /* margen de la derecha */
+color: #045FB4; /* color de la letra */
+text-align:center; /* alineaciÃ³n del texto */
+}
+div#contenedor1{
+background: green; /* color de fondo del contenedor receptor */
+border: dotted 2px #FF8000; /* borde de 8 pÃ­xeles de tipo punteado */
+width:200px; /* anchura de 200 pÃ­xeles */
+height: 200px; /* altura de 200 pÃ­xeles */
+position:absolute; /* posiciÃ³n absoluta para indicar margenes en base a la ventana */
+bottom:100px; /* margen inferior*/
+right:0px; /* margen de la derecha */
+color: #045FB4; /* color de la letra */
+text-align:center; /* alineaciÃ³n del texto */
+}
+
+a, a:visited {color:#FFF;}
+img#img{
+width:120px;
+height: 120px;
+} 
+span#span{
+color:red;
+font-size:20px;
+}
+p#parrafo{
+width:120px;
+text-align:center;
+}
+</style>
+
+</head>
+<body>
+  <p id="parrafo" draggable="true" ondragstart="drag(this, event)">
+  <img id="img" src="android.jpg" /><br/>
+  <div id="caja" draggable="true" ondragstart="drag(this, event)">HOLA</div>
+    </p>
+	hola
+	<span id="span">Arrastrame!</span>
+<div id="contenedor" ondrop="drop(this, event)" 
+ondragenter="return false" ondragover="cambia_color(this,event)">Contenendor
+</div>
+
+<div id="contenedor1" ondrop="drop(this, event)" 
+ondragenter="return false" ondragover="cambia_color(this,event)">Contenendor
+</div>
+
+<script>
+function drag(parrafo, evento) {
+//var x=document.getElementById('caja');
+evento.dataTransfer.setData('Text/html',  parrafo.innerHTML);
+
+}
+function cambia_color(c2,event)
+{
+c2.style.background='YELLOW';
+}
+
+
+
+function drop(c1, evento) {
+var id = evento.dataTransfer.getData('Text/html');
+//var x=document.getElementById('caja');
+c1.innerHTML=contenedor.innerHTML+" "+id;
+evento.preventDefault();
+
+}
+</script>
+</body>
+</html>

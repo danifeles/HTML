@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Eventos</title>
+</head>
+<body>
+<div id="contenidos" style="width:150px; height:60px; background: red";
+onmouseover="document.getElementById('contenidos').style.background='green';"
+onmouseout="document.getElementById('contenidos').style.background='red';"
+ondblclick="amarillo(this)">
+
+Ejemplo de eventos
+</div>
+<script>
+    function amarillo(param)
+    {
+        param.style.backgroundColor = "yellow";
+    }
+</script>
+</body>
+</html>

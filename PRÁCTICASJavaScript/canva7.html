@@ -1,0 +1,74 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Rectangulo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <canvas onmousemove="posicion(event)" id="lienzo" width="400px" height="300px" style="border: 1px solid;"></canvas>
+    <br>
+    <button id="boton1"> PINTAR EL RECTANGULO </button>
+    <br>
+    <p id="coordenadas">Coordenadas</p>
+
+    <script>
+       document.getElementById("boton1").addEventListener('click', pintar_rectangulo)
+
+            var lienzo = document.getElementById("lienzo");
+            var ctx = lienzo.getContext("2d");
+
+            //Dibujamos el marco
+
+            ctx.beginPath();
+
+            ctx.rect(75, 75, 150, 150);
+            ctx.rect(50, 50, 200, 200);
+
+            ctx.closePath();
+            ctx.stroke();
+
+            //Dibujamos triángulo relleno
+
+            ctx.beginPath();
+            ctx.moveTo(100, 100);
+            ctx.lineTo(175, 100);
+            ctx.lineTo(100, 175);
+            ctx.fill();
+            ctx.closePath();
+
+            //Dibujamos triángulo hueco
+
+            ctx.beginPath();
+            ctx.moveTo(200, 200);
+            ctx.lineTo(200, 120);
+            ctx.lineTo(120, 200);
+            ctx.closePath();
+            ctx.stroke();
+
+            function posicion(x)
+            {
+                var posx=x.clientX
+                var posy=x.clientY
+                document.getElementById("coordenadas").innerHTML=posx + "," + posy
+
+            }
+
+            function pintar_rectangulo()
+            {
+                var lienzo = document.getElementById("lienzo");
+                var ctx = lienzo.getContext("2d");
+                ctx.beginPath()
+                ctx.fillStyle()="red";
+                ctx.fillRect(10,10,20,20)
+                ctx.stroke();
+            }
+
+    </script>
+
+</body>
+
+</html>

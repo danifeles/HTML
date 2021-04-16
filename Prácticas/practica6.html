@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.css">
+  <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.js"></script>
+  <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2">
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="row" id="contenedorcompleto">
+      <div class="col-12">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" onclick="primera()" href="#" >H/M a Segundo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="temperatura()">Farenheit a Celsius</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Desactivado</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row" id="segundafila">
+      <div class="col-12">
+      </div>
+    </div>
+  <script>
+    function primera()
+    {
+        //Limpiar todos los objetos
+        var fila=document.getElementById("segundafila")
+        fila.innerHTML=""
+
+        //Crear una caja de texto
+        var caja=document.createElement("input")
+        caja.type="text"
+        caja.pattern="[0-9][0-9]:[0-9][0-9]"
+        caja.id="hora"
+        fila.removeChild(caja)
+        fila.appendChild(caja)
+        //Crear un salto
+        var salto=document.createElement("br")
+        fila.appendChild(salto)
+        //Crear la etique para visualizar el resultado
+        var etiqueta=document.createElement("label")
+        etiqueta.innerText="Sin calcular"
+        etiqueta.id="resultadoSegundos"
+        fila.appendChild(etiqueta)
+        var boton=document.createElement("button")
+    }
+
+    function horasmin() {
+      var horas = document.getElementById("hora").value
+      var valor = horas.split(":")
+      var res = valor[0] * 3600 + valor[1] * 60;
+      document.getElementById("p2").innerHTML = res + "segundos";
+    }
+  </script>
+  </div>
+</body>
+</html>

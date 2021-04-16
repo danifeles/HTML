@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="p1">Datos</p>
+
+
+    <script>
+
+        /*
+        var alumno={
+            nombre: "",
+            apellido: "",
+            edad: 0,
+
+            ver : function(){
+
+                return nombre
+            },
+
+                
+        }
+
+        function Alumno(nombre,apellidos){
+
+            this.nombre = nombre
+            this.apellido = apellidos
+
+        }
+
+        var alumno1 = new Alumno("Francisco", "Zaragoza")
+        var alumno2 = new Alumno("Ana", "Perez")
+
+        document.querySelector("#p1").innerHTML = alumno1.nombre + " " + alumno2.nombre
+        */
+
+
+
+        function Factura(cod, product, p) {
+            this.cod_factura = cod
+            this.producto = product
+            this.pvp = p
+            this.edad = 90
+            this.ver = function () {
+                return this.cod_factura + " " + this.producto + " " + this.pvp + " " + this.edad
+            }
+        }
+
+        var factura1 = new Factura(50, "Melones", 10)
+
+        document.querySelector("#p1").innerHTML = factura1.ver()
+    </script>
+</body>
+
+</html>

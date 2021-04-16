@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    
+    <link rel="stylesheet" href="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.css">
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.js"></script>
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2">
+    </script>
+</head>
+<body>
+   
+</head>
+
+<body>
+   <div class="container">
+       <div class="row" id="contenedorcompleto">
+           <div class="col-12">
+               <h1>MAPAS</h1>
+
+               <div class="input-group">
+                   <input type="text" id="latitud" class="form-control" placeholder="Latitud">
+                </div>
+                <div class="input-group" >
+                    <input type="text" id="longitud" class="form-control" placeholder="Longitud">
+                 </div>
+               <button type="button" id="boton1" class="btn btn-success" onclick="mostrar();">VER MAPA</button>
+              
+           </div>
+        <div class="row">
+            <div class="col-12" id="mapa">
+                MAPA
+            </div>
+        </div> 
+       </div>
+
+   </div>
+
+    <script>
+        //navigator.geolocalization
+
+        //Funcion para localizar las coordenadas
+        function localizar()
+        {
+            // si el navegador soporta geolocalizacion
+            if (navigator.geolocation)
+            {
+                //Recupera las coordenadas y se las pasa a una funcion (en este caso "mostrar")
+                navigator.geolocation.getCurrentPosition(mostrar)
+            }
+            else{
+                document.getElementById("coordenadas").innerHTML="No hay sopporte de GEO"
+            }
+
+        }
+
+        //Funciona para visualizar las coordenadas
+        function mostrar(p)
+        {
+            //Recupero latitud y longitu
+            var lat=document.getElementById("latitud").value
+            var longi=document.getElementById("longitud").value
+            
+            
+            //Recupero las coordenadas de mapa de Google
+            posicion=new google.maps.LatLng(lat,longi)
+            
+            //Preparo el contenedor para pintar el mapa
+            var m=document.getElementById("mapa")
+            m.style.height='550px'
+            m.style.width='1000px'
+
+            //Configuro las opciones del mapa
+            var opciones={center:posicion,zoom:15}
+
+            //Creo el mapa y lo cargo en el contenedor con las opciones
+            var mapa_google=new google.maps.Map(m,opciones)
+
+            //Pongo un karcador en la posición
+            var marcador= new google.maps.Marker({position:posicion,map:mapa_google,title:"ESTOY AQUI"})
+
+
+        }
+
+    </script>
+</body>
+</html>

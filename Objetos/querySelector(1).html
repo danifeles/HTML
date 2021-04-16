@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.querySelector("p")
+        document.querySelectorAll("p")
+    </script>
+
+    <style>
+        /*Elemento  CSS */
+        p {
+            text-align: center;
+            color: "green";
+        }
+
+        /* id=xxx*/
+        #para1 {
+            text-align: center;
+            color: red;
+        }
+
+        /* class=center */
+        .center {
+            text-align: center;
+            color: red;
+        }
+
+        /* p con class=center */
+        p.center {
+            text-align: center;
+            color: red;
+        }
+
+        /* Referencia a dos clases*/
+        p.center {
+            text-align: center;
+            color: red;
+        }
+
+        p.large {
+            font-size: 300%;
+        }
+
+        /*Grouping Selector */
+        h1,
+        h2,
+        p {
+            text-align: center;
+            color: red;
+        }
+
+        /**Descendiente*/
+        div p {
+            background-color: yellow;
+        }
+
+        /* child */
+        div>p {
+            background-color: yellow;
+        }
+
+        /* sibling adyaceentes (hermanos)*/
+        div + p {
+            background-color: yellow;
+        }
+
+        /* General Siblings */
+        div ~ p {
+            background-color: yellow;
+        }
+
+        /* Pseudo Classes */
+        /*en este caso de anchors */
+        /* unvisited link */
+        a:link {
+            color: #FF0000;
+        }
+
+        /* visited link */
+        a:visited {
+            color: #00FF00;
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: #FF00FF;
+        }
+
+        /* selected link */
+        a:active {
+            color: #0000FF;
+        }
+
+        /* hover en una DIV */
+        div:hover {
+            background-color: blue;
+        }
+
+        /* Attribite Selector 
+           todos los <a> con un aributo "target>*/
+        a[target] {
+            background-color: yellow;
+        }
+
+        /* lo mismo pereo con valor */
+        a[target="_blank"] {
+            background-color: yellow;
+        }
+
+        /*Para los formularios */
+        input[type=text] {
+            width: 150px;
+            display: block;
+            margin-bottom: 10px;
+            background-color: red;
+        }
+
+        input[type=button] {
+            width: 120px;
+            margin-left: 35px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+  <p> Esto es una ejemplo</p>
+  <div> nada</div>
+  <p> Esto es otro ejemplo</p>
+  <script>
+      // puede aplicarlo directamente
+      document.querySelector("p").style.backgroundColor="blue"
+
+      //Debo recorreme el array
+      var parrafos=document.querySelectorAll("p")
+      parrafos[1].style.backgroundColor="green"
+  </script>
+</body>
+
+</html>

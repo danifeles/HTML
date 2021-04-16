@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.css">
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.js"></script>
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="display-1" style="text-align: center;">Cookies</h1>
+    <div class="row mt-5 col-6 offset-3">
+        <div class="col-3">
+            <label>Nombre</label>
+        </div>
+        <div class="col-9">
+            <input type="text" class="form-control" placeholder="Nombre" id="nombre">
+        </div>
+    </div>
+    <div class="row mt-5 col-6 offset-3">
+        <div class="col-3">
+            <label>Apellidos</label>
+        </div>
+        <div class="col-9">
+            <input type="text" class="form-control" placeholder="Apellidos" id="apellidos">
+        </div>
+    </div>
+    <div class="row mt-5 col-6 offset-3">
+        <div class="col-3">
+            <label>Edad</label>
+        </div>
+        <div class="col-9">
+            <input type="number" class="form-control" placeholder="Edad" id="edad" min="1">
+        </div>
+    </div>
+    <div class="row mt-5 col-6 offset-3">
+        <div class="col-3">
+            <label>Hobby</label>
+        </div>
+        <div class="col-9">
+            <input type="text" class="form-control" placeholder="Hobby" id="hobby">
+        </div>
+    </div>
+    <div class="mt-5 col-6 offset-3">
+        <button class="btn btn-outline-primary btn-block" type="button" onclick="añadir_cookie()">Añadir</button>
+    </div>
+
+  <script>
+    function añadir_cookie(){
+        var val_nombre = document.getElementById("nombre").value
+        var val_apellidos = document.getElementById("apellidos").value
+        var val_edad = document.getElementById("edad").value
+        var val_hobby = document.getElementById("hobby").value
+
+        var persona={
+                nombre:val_nombre,
+                apellidos:val_apellidos,
+                edad:val_edad,
+                hobby:val_hobby
+            }
+        
+        for(i in persona){
+            document.cookie = i + "=" + persona[i]
+        }
+    }
+  </script>
+    
+    
+</body>
+</html>

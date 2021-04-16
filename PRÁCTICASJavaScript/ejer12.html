@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Eventos</title>
+</head>
+<body>
+<div id="contenidos1" style="width:150px; height:60px; background: red";
+onmouseover="document.getElementById('contenidos').style.background='green';"
+onmouseout="document.getElementById('contenidos').style.background='red';"
+ondblclick="cambiar(this)"> Ejemplo de eventos
+</div>
+<br>
+<div id="contenidos2" style="width:150px; height:60px; background: red";
+ondblclick="cambiar(this)"> Otro ejemplo </div>
+<p id="parrafo" style="width:150px; height:60px; background: red" ondblclick="cambiar(this)"> Otro ejemplo más </p>
+<script>
+    function cambiar(param)
+    {
+        param.style.backgroundColor = "yellow";
+    }
+</script>
+</body>
+</html>

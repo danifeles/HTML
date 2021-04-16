@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">
+
+    </p>
+    <p id="p2">
+
+    </p>
+    <p id="p3">
+
+    </p>
+    <script>
+         //Definimos el Objeto con propiedades y métodos
+         var factura = {
+            cod_factura: 49,
+            producto: "XXXXX",
+            pvp: 90,
+            ver : function () {
+                return this.cod_factura + " " + this.producto + " " + this.pvp;
+            }
+        }
+
+        //Constructor que se llama como el objeto
+        function Factura(cod_f, pro, pvp) {
+            this.cod_factura = cod_f
+            this.producto = pro
+            this.pvp = pvp
+        }
+        
+        var fac1 = new Factura(30, "HOLA", 30303)
+        var fac2 = new Factura(100, "García", 339939322)
+        var fac3 = new Factura(88, "CHAO", 494399932)
+        document.getElementById("p1").innerHTML = fac1.cod_factura + " " + fac1.producto + " " + fac1.pvp
+        document.getElementById("p2").innerHTML = fac2.cod_factura + " " + fac2.producto + " " + fac2.pvp
+        document.getElementById("p3").innerHTML = fac3.cod_factura + " " + fac3.producto + " " + fac3.pvp
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.css">
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.js"></script>
+    <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" id="contenedorcompleto">
+            <div class="col-6">
+                <h1>Formulario</h1>
+
+                <div class="input-group mb-3">
+                    <input type="text" id="entrada" class="form-control" placeholder="Introduzca cadena de texto" aria-label="Cadena"
+                        aria-describedby="basic-addon1">
+                </div>
+                <button type="button" id="boton1" class="btn btn-success" onclick="enviar();">Enviar</button>
+                <button type="button" id="boton2" class="btn btn-success" onclick="borrar();">Borrar</button>
+                <button type="button" id="boton3" class="btn btn-success" onclick="borrar1();">Borrar1</button>
+            </div>
+            <div class="col-6" id="lista">
+                
+            </div>
+        </div>
+
+    </div>
+    <script>
+    
+    function enviar() {
+
+
+        var cadena = document.getElementById("entrada").value;
+        var salida = cadena.split(' ');
+        var i = 0;
+    
+        while (i < salida.length) {
+    
+    
+            var node = document.createElement('div');
+            node.id = i;
+            node.className = "alert alert-primary";
+            node.appendChild(document.createTextNode(salida[i]));
+            document.getElementById("lista").appendChild(node);
+    
+            i++;
+        }
+    }
+    
+    function borrar() {
+        document.getElementById("lista").remove();
+        var contenedor = document.createElement('div');
+        contenedor.className = "col-6";
+        contenedor.id = "lista";
+        node = document.getElementById("contenedorcompleto");
+        node.appendChild(contenedor);
+    
+    }
+
+    function borrar1(){
+        var nodo = document.getElementById("lista")
+        if(nodo.childElementCount>0)
+        {
+            var hijos=nodo.childNodes
+            var longitud=hijos.length
+            var contador=longitud-1
+            while(contador>=1)
+            {
+                hijos[contador].remove()
+                contador++;
+            }
+        } else
+        {
+            alert("No hay nodos")
+        }
+    }
+
+    </script>
+
+</body>
+
+</html>

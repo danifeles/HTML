@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.css">
+  <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/bootstrap.min.js"></script>
+  <script src="/bootstrap-5.0.0-beta3-dist/bootstrap/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row" id="contenedorcompleto">
+      <div class="col-12">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" onclick="primera()" id="primera">H/M a Segundo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="segunda()" id="segunda">Farenheit a Celsius</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="posicion()" id="posicion">Calcular Posicion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="imagenes()">Imagenes</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div id="segundafila" class="col-12" style="border-style: solid; width: 400px; height: 400px;">
+        <h3>PANTALLA VACIA </h3>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="ver()">
+          <label class="form-check-label" for="exampleCheck1">Pinchame</label>
+        </div>
+        <div class="container" id="caja1" style="visibility: hidden;">
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="Check1" name="exampleCheck1" onclick="fotos()" checked> 
+            <label class="form-check-label" for="Check1"> I have a bike </label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="Check2" name="exampleCheck1" value="option2" onclick="fotos()">
+            <label class="form-check-label" for="Check2"> I have a car </label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="Check3" name="exampleCheck1" value="option3" onclick="fotos()">
+            <label class="form-check-label" for="Check3"> I have a boat </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="visibility:hidden;">
+      <div class="carousel-inner">
+        <div class="carousel-item active" id="imagen1">
+          <img class="d-block w-50" src="https://pedalmoto.com/blog/wp-content/uploads/2019/10/bicycle-daylight-forest-100582-min-1030x687.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item" id="imagen2">
+          <img class="d-block w-50" src="https://www.ecestaticos.com/image/clipping/557/418/982d84245d22ade565937ccdd3a8f082/llevo-a-arreglar-un-coche-de-lujo-asi-le-tomaron-el-pelo-los-mecanicos.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item" id="imagen3">
+          <img class="d-block w-50" src="https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2020/03/05/15834066373407.jpg" alt="Third slide">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <script>
+
+    function ver() {
+      var ischecked = document.getElementById("exampleCheck1").checked
+      var car = document.getElementById("carouselExampleControls")
+      var caja = document.getElementById("caja1")
+      if (ischecked)
+      {
+        car.style.visibility = "visible";
+        caja.style.visibility = "visible";
+      }
+      else 
+      {
+        car.style.visibility = "hidden";
+        caja.style.visibility = "hidden";
+      }
+    }
+
+    function fotos() {
+      var ischecked1 = document.getElementById("Check1").checked;
+      var ischecked2 = document.getElementById("Check2").checked;
+      var ischecked3 = document.getElementById("Check3").checked;
+      var foto1 = document.getElementById("imagen1")
+      var foto2 = document.getElementById("imagen2")
+      var foto3 = document.getElementById("imagen3")
+      if (ischecked1)
+      {
+        foto1.className = "carousel-item active";
+        foto2.className = "carousel-item";
+        foto3.className = "carousel-item";
+      } else if (ischecked2)
+      {
+        foto2.className = "carousel-item active";
+        foto1.className = "carousel-item";
+        foto3.className = "carousel-item";
+      } else if (ischecked3)
+      {
+        foto3.className = "carousel-item active";
+        foto1.className = "carousel-item";
+        foto2.className = "carousel-item";
+      } else {
+        foto1.className = "carousel-item active";
+        foto2.className = "carousel-item";
+        foto3.className = "carousel-item";
+      }
+    }
+
+    function primera() {
+
+      limpiar_pantalla("Hora minutos a Segundos")
+      var fila = document.getElementById("segundafila")
+
+      //Crear etiqueta
+      var etiqueta = document.createElement("label")
+      etiqueta.innerText = "Introduzca hora/minuto"
+      fila.appendChild(etiqueta)
+
+      //Crear una caja de texto
+      var caja = document.createElement("input")
+      caja.type = "text"
+      caja.pattern = "[0-9][0-9]:[0-9][0-9]"
+      caja.id = "hora"
+      fila.appendChild(caja)
+
+      //Crear un salto
+      var salto = document.createElement("br")
+      fila.appendChild(salto)
+
+      //Crear la etique para visualizar el resultado
+      var etiqueta = document.createElement("label")
+      etiqueta.innerText = "Resultado"
+      etiqueta.id = "resultadoSegundos"
+      fila.appendChild(etiqueta)
+
+      //Otro salto
+      var salto1 = document.createElement("br")
+      fila.appendChild(salto1)
+
+      //Crear el botón
+      var boton = document.createElement("button")
+      boton.type = "submit"
+      boton.innerText = "Calcular"
+      fila.appendChild(boton)
+
+      //Añado el evento al botón
+      boton.addEventListener('click', mostrarSegundos)
+
+    }
+
+    function segunda() {
+
+      limpiar_pantalla("Grados Celsius a Farenheit")
+      var fila = document.getElementById("segundafila")
+
+      //Crear etiqueta
+      var etiqueta = document.createElement("label")
+      etiqueta.innerText = "Introduzca grados Celsius"
+      fila.appendChild(etiqueta)
+
+      //Crear una caja de texto
+      var caja = document.createElement("input")
+      caja.type = "text"
+      caja.pattern = "[0-9]*"
+      caja.id = "temp"
+      fila.appendChild(caja)
+
+      //Crear un salto
+      var salto = document.createElement("br")
+      fila.appendChild(salto)
+
+      //Crear la etique para visualizar el resultado
+      var etiqueta = document.createElement("label")
+      etiqueta.innerText = "Resultado"
+      etiqueta.id = "resultadoFarenheit"
+      fila.appendChild(etiqueta)
+
+      //Otro salto
+      var salto1 = document.createElement("br")
+      fila.appendChild(salto1)
+
+      //Crear el botón
+      var boton = document.createElement("button")
+      boton.type = "submit"
+      boton.innerText = "Calcular"
+      fila.appendChild(boton)
+
+      //Añado el evento al botón
+      boton.addEventListener('click', temperatura)
+
+    }
+
+    function posicion() {
+
+      limpiar_pantalla("Posición")
+      var fila = document.getElementById("segundafila")
+
+      //Crear la etique para visualizar el resultado
+      var etiqueta = document.createElement("label")
+      etiqueta.innerText = "Posición"
+      etiqueta.id = "posicion"
+      fila.appendChild(etiqueta)
+
+      //Otro salto
+      var salto1 = document.createElement("br")
+      fila.appendChild(salto1)
+
+      //Crear el botón
+      var boton = document.createElement("button")
+      boton.type = "submit"
+      boton.innerText = "Calcular posición"
+      fila.appendChild(boton)
+
+      //Añado el evento al botón
+      boton.addEventListener('click', localizar)
+    }
+
+    function limpiar_pantalla(cadena) {
+      var fila = document.getElementById("segundafila").children;
+      fila[0].innerHTML = cadena
+      var longitud = fila.length;
+      for (var i = (longitud - 1); i >= 1; i--) {
+        fila[i].remove();
+      }
+    }
+
+    function temperatura() {
+      var grados = document.getElementById("temp").value
+      var res = grados * (9 / 5) + 32;
+      document.getElementById("resultadoFarenheit").innerHTML = res;
+
+    }
+    function mostrarSegundos() {
+      var valor = document.getElementById("hora").value
+      valor = valor.split(":")
+      var resultado = valor[0] * 3600 + valor[1] * 60
+      document.getElementById("resultadoSegundos").innerHTML = resultado + " segundos"
+    }
+
+    function localizar() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(mostrar)
+      } else {
+        document.getElementById("posicion").innerHTML = "No hay soporte de GEO"
+      }
+    }
+
+    //Funcion para visualizar las coordenadas
+    function mostrar(p) {
+      document.getElementById("posicion").innerHTML = "Latitud: " + p.coords.latitude + " Longitud: " + p.coords.longitude;
+    }
+  </script>
+
+</body>
+
+</html>

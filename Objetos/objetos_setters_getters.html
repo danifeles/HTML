@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="pintar">
+
+
+
+    </div>
+    <button id="boton" onclick="ver()"> Click </button>
+    <script>
+        function ver() {
+            var curso = {
+                codigo: 01,
+                nombre_curso: "XXXXX",
+                nombre_profesor: "XXXXX",
+                num_asignaturas: 10,
+                num_alumnos: 30,
+                ver_datos: function () {
+                    return this.nombre_curso + " " + this.nombre_profesor;
+                },
+                beneficios: function () {
+                    return this.num_alumnos * 100;
+                },
+                set setNum_Alumnos(valor) {
+                    if (valor > 15) {
+                        this.num_alumnos = valor
+                    } else {
+                        this.num_alumnos = valor;
+                    }
+                },
+                get getNum_Alumnos() {
+                    return this.num_alumnos
+                },
+                set setNombre_Profesor(valor) {
+                        this.nombre_profesor = valor.toUpperCase();
+                    },
+
+                get getNombre_Profesor() {
+                    return this.nombre_profesor
+                }
+
+            }
+
+
+            curso.setNum_Alumnos = 30
+            curso.setNombre_Profesor = "Alberto"
+
+            curso.neto = function (iva) {
+                return curso.beneficios() * iva;
+            }
+
+            for (i in curso) {
+                document.getElementById("pintar").innerHTML = document.getElementById("pintar").innerHTML + i + " " + curso[i];
+            }
+
+            document.writeln("Función ver_datos: " + curso.ver_datos())
+            document.writeln("Función beneficios: " + curso.beneficios())
+            document.writeln("Función curso neto" + curso.neto(0.12))
+            document.getElementById("pintar").innerHTML = curso.getNum_Alumnos;
+            document.getElementById("pintar").innerHTML = curso.getNombre_Profesor;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="pintar">
+
+
+
+    </div>
+    <button id="boton" onclick="ver()"> Click </button>
+    <script>
+        function ver() {
+            var curso = {
+                codigo: 01,
+                nombre_curso: "XXXXX",
+                nombre_profesor: "XXXXX",
+                num_asignaturas: 10,
+                num_alumnos: 30,
+                ver_datos: function () {
+                    return this.nombre_curso + " " + this.nombre_profesor;
+                },
+                beneficios: function () {
+                    return this.num_alumnos * 100;
+                },
+            }
+            curso.neto = function (iva) {
+                return curso.beneficios() * iva;
+            }
+
+            document.writeln("Función ver_datos: "+ curso.ver_datos())
+            document.writeln("Función beneficios: " +curso.beneficios())
+            document.writeln("Función curso neto" +curso.neto(0.12))
+        }
+    </script>
+</body>
+
+</html>
